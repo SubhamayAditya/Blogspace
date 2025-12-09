@@ -107,6 +107,19 @@ class AuthController extends Controller
         return view('admin.adminblogs', compact('blogs'));
     }
 
+    //Admin dashboard
+    public function adminDashboard()
+    {
+        if (auth()->user()->role !== 'admin') {
+            abort(403, 'Unauthorized');
+        }
+
+        return view('admin.admindashboard', [
+            'totalUsers'     => User::count(),
+            'pendingUsers'   => User::where('is_approved', false)->count(),
+            'totalBlogs'     => Blog::count(),
+        ]);
+    }
     // ------------------------------------------------------------User Role ------------------------------------------------------------//
 
     // users blogs
@@ -120,6 +133,20 @@ class AuthController extends Controller
 
         return view('user.userblogs', compact('blogs'));
     }
+
+
+    // User dashboard
+    public function UserDashboard()
+    {
+        if (auth()->user()->role !== 'user') {
+            abort(403, 'Unauthorized');
+        }
+
+        return view('user.dashboard', [
+            'userBlogs' => Blog::where('user_id', auth()->id())->count(),
+        ]);
+    }
+
 
 
     // user blogs delete

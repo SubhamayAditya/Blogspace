@@ -13,29 +13,13 @@
                 <p class="text-muted">Manage your application data from here.</p>
 
                 <div class="row mt-4">
-                    {{-- <div class="col-lg-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>Total Users</h5>
-                                <h3>25</h3>
-                            </div>
-                        </div>
-                    </div> --}}
-
-                    {{-- <div class="col-lg-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>Pending Approvals</h5>
-                                <h3>8</h3>
-                            </div>
-                        </div>
-                    </div> --}}
+                   
 
                     <div class="col-lg-4">
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5>Total Blogs</h5>
-                                <h3>42</h3>
+                                <h3>{{ $userBlogs }}</h3>
                             </div>
                         </div>
                     </div>

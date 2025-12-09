@@ -78,6 +78,12 @@ Route::get('/admin/adminblogs', [AuthController::class, 'adminblogs'])
     ->name('admin.blogs');
 
 
+    //Admin dashboard
+
+    Route::get('/admin/admindashboard', [AuthController::class, 'adminDashboard'])
+    ->middleware('auth');
+
+
 //------------------------------------------------------------ Users Role------------------------------------------------------------//
 // User Dashboard
 Route::get('/user/dashboard', function () {
@@ -97,8 +103,7 @@ Route::get('/user/userprofile', function () {
     return view('user.userprofile');
 })->middleware('auth')->name('user.profile');
 
-// user blog delete
+ //User dashboard
 
-// Route::delete('/blog/delete/{id}', [BlogController::class, 'destroy'])
-//     ->middleware('auth')
-//     ->name('blog.delete');
+    Route::get('/user/dashboard', [AuthController::class, 'UserDashboard'])
+    ->middleware('auth');

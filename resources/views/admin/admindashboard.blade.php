@@ -1,52 +1,61 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="row">
 
-            <!-- Sidebar -->
-            @include('admin.adminsidebar')
+<style>
+    .stats-card {
+        border-radius: 12px;
+        transition: .2s;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+    }
+    .stats-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+</style>
 
-            <!-- Main Section -->
-            <div class="col-md-9 col-lg-10 p-4">
-                <h2 class="fw-bold">Welcome,   {{ Auth::user()->name }} 👋</h2>
-                <p class="text-muted">Manage your application data from here.</p>
+<div class="container-fluid">
+    <div class="row">
 
-                <div class="row mt-4">
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>Total Users</h5>
-                                <h3>25</h3>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Sidebar -->
+        @include('admin.adminsidebar')
 
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>Pending Approvals</h5>
-                                <h3>8</h3>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Main Section -->
+        <div class="col-md-9 col-lg-10 p-4">
 
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>Total Blogs</h5>
-                                <h3>42</h3>
-                            </div>
-                        </div>
+            <h2 class="fw-bold">Welcome, {{ Auth::user()->name }} 👋</h2>
+            <p class="text-muted">Manage your application data from here.</p>
+
+            <div class="row mt-4">
+
+                <div class="col-lg-4 mb-3">
+                    <div class="card stats-card shadow-sm p-3">
+                        <h6 class="text-muted">Total Users</h6>
+                        <h2 class="fw-bold">{{ $totalUsers }}</h2>
                     </div>
                 </div>
 
-                <footer class="mt-5">
-                    <p class="text-center text-white small">© 2025 BlogSpace Dashboard</p>
-                </footer>
+                <div class="col-lg-4 mb-3">
+                    <div class="card stats-card shadow-sm p-3">
+                        <h6 class="text-muted">Pending Approvals</h6>
+                        <h2 class="fw-bold">{{ $pendingUsers }}</h2>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="card stats-card shadow-sm p-3">
+                        <h6 class="text-muted">Total Blogs</h6>
+                        <h2 class="fw-bold">{{ $totalBlogs }}</h2>
+                    </div>
+                </div>
+
             </div>
 
+           
         </div>
+
     </div>
+</div>
 
 @endsection
