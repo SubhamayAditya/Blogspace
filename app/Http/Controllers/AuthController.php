@@ -147,6 +147,10 @@ class AuthController extends Controller
         ]);
     }
 
+    //user edit
+    public function edituser(){
+return view('user.edituser');
+    }
 
 
     // user blogs delete

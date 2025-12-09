@@ -78,9 +78,9 @@ Route::get('/admin/adminblogs', [AuthController::class, 'adminblogs'])
     ->name('admin.blogs');
 
 
-    //Admin dashboard
+//Admin dashboard
 
-    Route::get('/admin/admindashboard', [AuthController::class, 'adminDashboard'])
+Route::get('/admin/admindashboard', [AuthController::class, 'adminDashboard'])
     ->middleware('auth');
 
 
@@ -103,7 +103,9 @@ Route::get('/user/userprofile', function () {
     return view('user.userprofile');
 })->middleware('auth')->name('user.profile');
 
- //User dashboard
-
-    Route::get('/user/dashboard', [AuthController::class, 'UserDashboard'])
+//User dashboard
+Route::get('/user/dashboard', [AuthController::class, 'UserDashboard'])
     ->middleware('auth');
+
+    // edit user
+    Route::get('/edituser', [AuthController::class, 'edituser'])->name('user.edit');

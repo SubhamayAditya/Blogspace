@@ -1,6 +1,20 @@
 @extends('layouts.master')
 
 @section('content')
+    <style>
+        .stats-card {
+            border-radius: 12px;
+            transition: .2s;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+
     <div class="container-fluid">
         <div class="row">
 
@@ -13,21 +27,16 @@
                 <p class="text-muted">Manage your application data from here.</p>
 
                 <div class="row mt-4">
-                   
 
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5>Total Blogs</h5>
-                                <h3>{{ $userBlogs }}</h3>
-                            </div>
+                    <div class="col-lg-4 mb-3">
+                        <div class="card stats-card shadow-sm p-3">
+                            <h6 class="text-muted">Total Blogs</h6>
+                            <h2 class="fw-bold">{{ $userBlogs }}</h2>
                         </div>
                     </div>
+
                 </div>
 
-                <footer class="mt-5">
-                    <p class="text-center text-white small">© 2025 Admin Dashboard</p>
-                </footer>
             </div>
 
         </div>
