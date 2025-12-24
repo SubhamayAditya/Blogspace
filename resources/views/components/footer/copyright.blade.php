@@ -1,0 +1,1 @@
+ <p>&copy; 2024 BlogSpace. All rights reserved.</p>
