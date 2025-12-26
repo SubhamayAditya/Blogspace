@@ -96,6 +96,19 @@ class BlogController extends Controller
         return view('pages.searchresult', compact('blogs'));
     }
 
+     //Category search
+    public function catSearch(Request $request)
+    {
+        $query = $request->query('query');
+
+        $blogs = Blog::where('category', 'LIKE', "%{$query}%")
+            ->paginate(6)
+            ->appends(['query' => $query]); // keep query on pagination
+
+        return view('pages.searchresult', compact('blogs', 'query'));
+    }
+
+
 // ------------------------------------------------------------Comments & replies---------------------------------------------------------------------------------------
 
     public function showComment($id)

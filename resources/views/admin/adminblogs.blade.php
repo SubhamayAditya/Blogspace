@@ -39,7 +39,8 @@
                                     <img src="{{ asset('uploads/' . $blog->image) }}" width="70">
                                 </td>
                                 {{-- <td>{{ Str::limit($blog->description, 50) }}</td> --}}
-                                <td>{!! $blog->description !!}</td>
+                                {{-- <td>{!! $blog->description !!}</td> --}}
+                                <td> {{ \Illuminate\Support\Str::limit(strip_tags($blog->description), 50) }}</td>
                                 <td>{{ $blog->category }}</td>
                                 <td>{{ $blog->created_at->format('d M, Y') }}</td>
                                 <td>{{ $blog->updated_at->format('d M, Y') }}</td>
@@ -47,7 +48,7 @@
                                         target="_blank">Show</a></td>
                                 <td>{{ $blog->views }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-info">Edit</a>
+                                    <a href="{{ route('admin.blog.edit', $blog->id) }}" class="btn btn-sm btn-info">Edit</a>
 
                                     <form action="{{ route('blog.delete', $blog) }}" method="POST">
                                         @csrf

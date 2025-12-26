@@ -32,6 +32,9 @@ Route::get('/contact', [BlogController::class, 'contact'])->name('blog.contact')
 // Search
 Route::get('/blogs/search', [BlogController::class, 'search'])->name('blog.search');
 
+// Sidebar Category Search
+Route::get('/category-search', [BlogController::class, 'catSearch'])->name('category.search');
+
 // Register Page
 Route::get('/register', [AuthController::class, 'registerPage'])->name('register.form');
 
@@ -101,7 +104,11 @@ Route::delete('/blog/{blog}', [BlogController::class, 'destroyAdmin'])
     ->name('blog.delete');
 
 
+// Edit Admin blog
+Route::get('/admin/blog/{id}/edit', [AuthController::class, 'EditAdminBlog'])->name('admin.blog.edit');
 
+// update Admin blog
+// Route::put('/user/blog/{id}', [AuthController::class, 'UpdateUsrBlog'])->name('user.blog.update');
 
 
 //------------------------------------------------------------ Users Role------------------------------------------------------------//
@@ -137,6 +144,9 @@ Route::get('/user/blog/{id}', [AuthController::class, 'showBlog'])->name('user.b
 
 // Edit user blog
 Route::get('/user/blog/{id}/edit', [AuthController::class, 'EditUsrBlog'])->name('user.blog.edit');
+
+// update user blog
+Route::put('/user/blog/{id}', [AuthController::class, 'UpdateUsrBlog'])->name('user.blog.update');
 
 
 

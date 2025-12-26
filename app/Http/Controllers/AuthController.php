@@ -189,6 +189,16 @@ class AuthController extends Controller
         return view('admin.showadminblog', compact('blog'));
     }
 
+    //Edit blog page from Admin dashboard
+    public function EditAdminBlog($id)
+    {
+        $blog = Blog::where('id', $id)
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
+
+        return view('admin.editadminblog', compact('blog'));
+    }
+
 
     // ------------------------------------------------------------User Role ------------------------------------------------------------//
 
@@ -234,7 +244,7 @@ class AuthController extends Controller
         return view('user.showuserblog', compact('blog'));
     }
 
-     //Edit blog from user dashboard
+    //Edit blog page from user dashboard
     public function EditUsrBlog($id)
     {
         $blog = Blog::where('id', $id)
@@ -242,5 +252,39 @@ class AuthController extends Controller
             ->firstOrFail();
 
         return view('user.edituserblog', compact('blog'));
+    }
+
+    //Update user blog
+
+
+    public function UpdateUsrBlog(Request $request, $id)
+    {
+        $blog = Blog::findOrFail($id);
+
+        $request->validate([
+            'title'       => 'required|string|max:255',
+            'image'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'description' => 'required',
+        ]);
+
+        // If new image uploaded
+        if ($request->hasFile('image')) {
+
+            // Delete old image
+            if ($blog->image && file_exists(public_path('uploads/' . $blog->image))) {
+                unlink(public_path('uploads/' . $blog->image));
+            }
+
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads'), $imageName);
+
+            $blog->image = $imageName;
+        }
+
+        $blog->title       = $request->title;
+        $blog->description = $request->description;
+        $blog->save();
+
+        return redirect()->back()->with('success', 'Blog updated successfully!');
     }
 }

@@ -16,8 +16,8 @@
         </div>
     </section>
 
-    {{-- CONTENT --}}
-    <section class="py-5">
+    {{-- CONTENT --}}   
+    <section class="py-5" style="background: #e2e2e2">
         <div class="container">
             <div class="row justify-content-center">
 
@@ -35,11 +35,11 @@
                         class="rounded-circle me-3"
                         alt="Author"> --}}
                         <div>
-                            <strong> {{ $blog->user->name ?? 'Unknown User' }}</strong>
-                            <small class="text-muted">({{ ucfirst($blog->user->role ?? '') }})</small>
-                            <div class="text-muted small">
+                            {{-- <strong> {{ $blog->user->name ?? 'Unknown User' }}</strong> --}}
+                            {{-- <small class="text-muted">({{ ucfirst($blog->user->role ?? '') }})</small> --}}
+                            {{-- <div class="text-muted small">
                                 {{ $blog->created_at->diffForHumans() }}
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 

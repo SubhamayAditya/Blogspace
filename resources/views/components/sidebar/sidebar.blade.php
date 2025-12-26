@@ -19,7 +19,7 @@
     <!-- Popular Tags -->
     <div class="sidebar-widget">
         <h5><i class="fas fa-tags"></i> Popular Categories</h5>
-        <div>
+        {{-- <div>
             <span class="tag">Technology</span>
             <span class="tag">Travel</span>
             <span class="tag">Design</span>
@@ -30,7 +30,15 @@
             <span class="tag">Education</span>
             <span class="tag">Entertainment</span>
             <span class="tag">Sports</span>
+        </div> --}}
+          <div class="category-tags">
+            @foreach (['Technology', 'Travel', 'Design', 'Business', 'Lifestyle', 'Food & Cooking', 'Health & Wellness', 'Education', 'Entertainment', 'Sports'] as $cat)
+                <a href="{{ route('category.search', ['query' => $cat]) }}" class="tag">
+                    {{ $cat }}
+                </a>
+            @endforeach
         </div>
+        
     </div>
 
 </div>
