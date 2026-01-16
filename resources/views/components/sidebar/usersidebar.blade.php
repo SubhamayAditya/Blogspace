@@ -1,0 +1,36 @@
+    <style>
+    .nav-link.active{
+    background:linear-gradient(135deg,#6366f1,#8b5cf6);
+    color:#fff !important;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.nav-link:hover{
+    background:rgba(255,255,255,.1);
+    border-radius:8px;
+}
+
+  </style>
+  
+  <div class="col-md-3 col-lg-2 bg-dark text-white vh-100 p-3">
+      <h4 class="fw-bold mb-4">Menu</h4>
+      <h5 class="fw-bold mb-4"> <i class='far fa-user-circle' style='font-size:26px'></i> {{ Auth::user()->name }}</h5>
+      <ul class="nav flex-column gap-2">
+          <li class="nav-item">
+              <a href="/user/dashboard" class="nav-link text-white {{ Request::is('user/dashboard*') ? 'active' : '' }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+              <a href="/user/userprofile" class="nav-link text-white {{ Request::is('user/userprofile*') ? 'active' : '' }}"><i class="fa fa-user"></i> User Profile</a>
+          </li>
+          <li class="nav-item">
+              <a href="/user/userblogs" class="nav-link text-white {{ Request::is('user/userblogs*') ? 'active' : '' }}"><i class="fa fa-blog"></i> Blog Management</a>
+          </li>
+          <li class="nav-item">
+              <form action="/logout" method="POST">
+                  @csrf
+                  <button class="nav-link text-white" type="submit"><i class="fa fa-sign-out"></i> Logout</button>
+              </form>
+          </li>
+      </ul>
+  </div>
