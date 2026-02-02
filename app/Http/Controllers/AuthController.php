@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Blog;
 use App\Models\Message;
 use App\Models\BlogReaction;
+<<<<<<< HEAD
 use App\Models\Category;
+=======
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
 
 use App\Http\Controllers\CommentController;
 // use Dom\Comment;
@@ -216,6 +219,7 @@ class AuthController extends Controller
             ->where('user_id', auth()->id())
             ->firstOrFail();
 
+<<<<<<< HEAD
         // Fetch all categories
         $categories = Category::orderBy('name')->get();
 
@@ -258,6 +262,12 @@ class AuthController extends Controller
         return back()->with('success', 'Category deleted!');
     }
 
+=======
+        return view('admin.editadminblog', compact('blog'));
+    }
+
+
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
     // ------------------------------------------------------------User Role ------------------------------------------------------------//
 
     // users blogs
@@ -313,12 +323,16 @@ class AuthController extends Controller
             ->where('user_id', auth()->id())
             ->firstOrFail();
 
+<<<<<<< HEAD
         // Fetch all categories
         $categories = Category::orderBy('name')->get();
 
         return view('user.edituserblog', compact('blog', 'categories'));
 
         // return view('user.edituserblog', compact('blog'));
+=======
+        return view('user.edituserblog', compact('blog'));
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
     }
 
     //Update user blog
@@ -332,7 +346,10 @@ class AuthController extends Controller
             'title'       => 'required|string|max:255',
             'image'       => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'description' => 'required',
+<<<<<<< HEAD
             'category' => 'required',
+=======
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
         ]);
 
         // If new image uploaded
@@ -351,7 +368,10 @@ class AuthController extends Controller
 
         $blog->title       = $request->title;
         $blog->description = $request->description;
+<<<<<<< HEAD
         $blog->category = $request->category;
+=======
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
         $blog->save();
 
         return redirect()->back()->with('success', 'Blog updated successfully!');

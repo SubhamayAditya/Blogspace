@@ -1,9 +1,18 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
 @extends('layouts.master')
 
 
 @section('content')
+<<<<<<< HEAD
     <style>
         /* Values Section */
+=======
+<style>
+    /* Values Section */
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
         .values-section {
             padding: 80px 0;
             background: var(--light);
@@ -70,9 +79,16 @@
             color: #64748b;
             line-height: 1.7;
         }
+<<<<<<< HEAD
     </style>
 
     <section class="values-section">
+=======
+
+</style>
+
+<section class="values-section">
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
         <div class="container">
             <div class="section-title">
                 <h2>Categories</h2>
@@ -157,6 +173,7 @@
                 </div>
             </div> --}}
 
+<<<<<<< HEAD
             <div class="category-tags">
                 @foreach (['Technology', 'Travel', 'Design', 'Business', 'Lifestyle', 'Food & Cooking', 'Health & Wellness', 'Education', 'Entertainment', 'Sports'] as $cat)
                     <a href="{{ route('category.search', ['query' => $cat]) }}" class="tag" style="text-decoration: none">
@@ -226,3 +243,17 @@
 
     </section>
 @endsection
+=======
+             <div class="category-tags">
+            @foreach (['Technology', 'Travel', 'Design', 'Business', 'Lifestyle', 'Food & Cooking', 'Health & Wellness', 'Education', 'Entertainment', 'Sports'] as $cat)
+                <a href="{{ route('category.search', ['query' => $cat]) }}" class="tag" >
+                    {{ $cat }}
+                </a>
+            @endforeach
+        </div>
+        </div>
+    </section>
+
+       
+@endsection
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00

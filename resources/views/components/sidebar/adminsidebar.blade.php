@@ -32,10 +32,13 @@
           </li>
 
           <li class="nav-item">
+<<<<<<< HEAD
               <a href="/admin/categories" class="nav-link text-white {{ Request::is('admin/categories*') ? 'active' : '' }}"><i class="fa fa-cubes"></i> Category Set</a>
           </li>
 
           <li class="nav-item">
+=======
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
 
               <form action="/logout" method="POST">
                   @csrf

@@ -31,7 +31,11 @@
                                     <span><i class="fa-solid fa-eye"></i> <small class="text-muted">{{ $blog->views }}
                                             Views</small> . <i class="fa-regular fa-user"></i>
                                         {{ $blog->user->name ?? 'Unknown User' }} <small class="text-muted"></small>
+<<<<<<< HEAD
                                         <a href="{{ route('blog.details', $blog->id) }}" style="text-decoration: none;">
+=======
+                                        <a href="{{ route('blog.details', $blog->id) }}">
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                                             <h3 class="blog-title">{{ $blog->title }}</h3>
                                         </a>
 

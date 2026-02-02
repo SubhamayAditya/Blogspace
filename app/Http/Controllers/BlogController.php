@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+<<<<<<< HEAD
 use App\Models\Category;
+=======
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
 
 class BlogController extends Controller
 {
@@ -27,11 +30,15 @@ class BlogController extends Controller
     // Write 
     public function write()
     {
+<<<<<<< HEAD
         // return view('pages.writes.write');
 
         $categories = Category::orderBy('name')->get();
 
         return view('pages.writes.write', compact('categories'));
+=======
+        return view('pages.writes.write');
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
     }
 
 
@@ -42,8 +49,12 @@ class BlogController extends Controller
             'title'      => 'required|string|max:255',
             'image'      => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'description' => 'required',
+<<<<<<< HEAD
             // 'category'   => 'required',
             'category'    => 'required|exists:categories,name',
+=======
+            'category'   => 'required',
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
         ]);
 
         // Handle image upload

@@ -65,6 +65,7 @@
                         </small>
                     </div>
 
+<<<<<<< HEAD
                      {{-- category --}}
                         <div class="row mb-4">
                             <div class="col-md-6 mb-3">
@@ -89,6 +90,8 @@
                             </div>
                         </div>
 
+=======
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                     {{-- CONTENT --}}
                     <div class="mb-4">
                         <label class="form-label fw-semibold">Blog Content</label>

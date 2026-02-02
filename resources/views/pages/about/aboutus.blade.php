@@ -352,7 +352,11 @@
                     <h2>Ready to Share Your Story?</h2>
                     <p>Join thousands of writers who trust BlogSpace to amplify their voice</p>
 
+<<<<<<< HEAD
                     <button class="btn btn-white" onclick="location.href='{{ route('blog.write') }}'" style="text-decoration: none">
+=======
+                    <button class="btn btn-white" onclick="location.href='{{ route('blog.write') }}'">
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                         <i class="fas fa-pen"></i> Start Writing Today
                     </button>
                 </div>
@@ -367,7 +371,11 @@
       <h2>Ready to Share Your Story?</h2>
                     <p>Join thousands of writers who trust BlogSpace to amplify their voice</p>
                 <button class="btn btn-primary btn-lg shadow rounded-pill px-5">
+<<<<<<< HEAD
                     <a class="text-white" href="{{ route('login') }}" style="text-decoration: none">
+=======
+                    <a class="text-white" href="{{ route('login') }}">
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                         Login
                     </a>
                 </button>

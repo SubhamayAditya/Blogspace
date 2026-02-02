@@ -7,9 +7,14 @@
             <div class="trending-post">
                 <img src="{{ asset('uploads/' . $blog->image) }}" class="trending-img" alt="Trending">
                 <div class="trending-content">
+<<<<<<< HEAD
                     <a href="{{ route('blog.details', $blog->id) }}" style="text-decoration: none;">
                         <h6>{{ $blog->title }}</h6>
                     </a>
+=======
+                    <a href="{{ route('blog.details', $blog->id) }}"></a>
+                    <h6>{{ $blog->title }}</h6>
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                     </a>
                     <span><i class="fa-solid fa-eye"></i> <small class="text-muted">{{ $blog->views }} Views</small> · 
                     <span><i class="fa-regular fa-user"></i> <small class="text-muted"> {{ $blog->user->name ?? 'Unknown User' }} </small>
@@ -39,7 +44,11 @@
 
         <div class="category-tags">
             @foreach (['Technology', 'Travel', 'Design', 'Business', 'Lifestyle', 'Food & Cooking', 'Health & Wellness', 'Education', 'Entertainment', 'Sports'] as $cat)
+<<<<<<< HEAD
                 <a href="{{ route('category.search', ['query' => $cat]) }}" class="tag" style="text-decoration: none;">
+=======
+                <a href="{{ route('category.search', ['query' => $cat]) }}" class="tag">
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                     {{ $cat }}
                 </a>
             @endforeach

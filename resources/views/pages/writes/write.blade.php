@@ -63,8 +63,12 @@
                 @enderror
 
                 <!-- Category -->
+<<<<<<< HEAD
 
                 {{-- <div class="row mb-4">
+=======
+                <div class="row mb-4">
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                     <div class="col-md-6 mb-3">
                         <label class="form-label"><i class="fas fa-folder"></i> Category</label>
                         <select class="form-select" id="blogCategory" name="category">
@@ -87,6 +91,7 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+<<<<<<< HEAD
                 </div> --}}
 
 
@@ -114,6 +119,10 @@
                 </div>
 
 
+=======
+                </div>
+
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
                 <!-- Blog Content -->
                 <label class="form-label"><i class="fas fa-edit"></i> Content Editor</label>
                 {{-- <textarea class="form-control content-textarea" id="blogContent" name="description"

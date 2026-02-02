@@ -140,6 +140,7 @@ Route::get('/admin/blog/{id}/edit', [AuthController::class, 'EditAdminBlog'])->n
 // Route::put('/user/blog/{id}', [AuthController::class, 'UpdateUsrBlog'])->name('user.blog.update');
 
 
+<<<<<<< HEAD
 
 
 Route::middleware(['auth'])->group(function () {
@@ -149,6 +150,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+=======
+>>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
 //------------------------------------------------------------ Users Role------------------------------------------------------------//
 // User Dashboard
 Route::get('/user/dashboard', function () {
