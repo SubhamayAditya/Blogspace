@@ -1,0 +1,1 @@
+ <p>&copy; {{ date('Y') }} BlogSpace. All rights reserved.<br><em> Design & Developed By - </em><strong><a href="https://subhamayaditya.vercel.app/" target="_blank" style="text-decoration: none; color: yellow;">Subhamay Aditya</a></strong></p> 

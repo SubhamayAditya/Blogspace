@@ -1,0 +1,2 @@
+   <h5 class="fw-bold mb-3" ><a href="{{ route('blog.index') }}" style="text-decoration: none;  color:#7257b3"><i class="fas fa-blog"></i> BlogSpace</a></h5>
+                    <p>Your platform for sharing stories and connecting with readers worldwide.</p>
