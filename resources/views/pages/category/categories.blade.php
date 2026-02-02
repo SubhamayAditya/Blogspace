@@ -244,16 +244,19 @@
     </section>
 @endsection
 =======
-             <div class="category-tags">
-            @foreach (['Technology', 'Travel', 'Design', 'Business', 'Lifestyle', 'Food & Cooking', 'Health & Wellness', 'Education', 'Entertainment', 'Sports'] as $cat)
-                <a href="{{ route('category.search', ['query' => $cat]) }}" class="tag" >
-                    {{ $cat }}
-                </a>
-            @endforeach
-        </div>
-        </div>
-    </section>
 
-       
-@endsection
->>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
+<div class="category-tags">
+    @foreach (['Technology', 'Travel', 'Design', 'Business', 'Lifestyle', 'Food & Cooking', 'Health & Wellness', 'Education', 'Entertainment', 'Sports'] as $cat)
+    <a href="{{ route('category.search', ['query' => $cat]) }}" class="tag" >
+        {{ $cat }}
+        </a>
+        @endforeach
+        </div>
+        </div>
+        </section>
+        
+        
+        @endsection
+        >>>>>>> 0bd373c53cca39c0ea4a4d40ddb035e1b6e7ad00
+        
+        /* new section to be added */
